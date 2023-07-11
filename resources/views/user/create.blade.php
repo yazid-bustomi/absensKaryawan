@@ -70,7 +70,8 @@
                 <button type="submit" class="btn btn-primary mt-4" name="checkinBtn">Check In</button>
                 <button type="submit" class="btn btn-primary mt-4" name="checkoutBtn" disabled>Check Out</button>
             @endif
-
+            
         </form>
     </div>
+
 @endsection
