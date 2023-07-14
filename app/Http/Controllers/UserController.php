@@ -90,14 +90,26 @@ class UserController extends Controller
 
         // jika belum checkin maka lakukan aksi ini
         if (!$absenToDay && $request -> has('checkinBtn')){
-            $absen = new Absen();
-            $absen->hari = $request->hari;
-            $absen->checkin = $request->jam;
-            $absen->status = $request->status;
-            $absen->alasan = $request->alasan;
-            $absen->user_id = $request->user_id;
-            $absen->save();
-            return redirect('/users');
+            if($request->status == "Masuk"){
+                $absen = new Absen();
+                $absen->hari = $request->hari;
+                $absen->checkin = $request->jam;
+                $absen->status = $request->status;
+                $absen->alasan = $request->alasan;
+                $absen->user_id = $request->user_id;
+                $absen->save();
+                return redirect('/users');
+            } else{
+                $absen = new Absen();
+                $absen->hari = $request->hari;
+                $absen->checkin = $request->jam;
+                $absen->checkout = $request->jam;
+                $absen->status = $request->status;
+                $absen->alasan = $request->alasan;
+                $absen->user_id = $request->user_id;
+                $absen->save();
+                return redirect('/users');
+            }
         }
     }
 
