@@ -1,3 +1,15 @@
+Aplikasi Absensi Karyawan sederhana
+
+user admin  =>  email = admin@gmail.com   pass = 11
+
+user 1  =>  email = user1@gmail.com  pass = 11
+user 2  =>  email = user2@gmail.com  pass = 11
+
+<br> <br> <br> <br>
+
+
+
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">
