@@ -55,16 +55,25 @@
 
                 {{-- Jika sudah checkin --}}
                 @if ($absenToDay->checkout === null)
-                    {{-- Jika belum Checkout --}}
-                    <button type="submit" class="btn btn-primary mt-4" name="checkinBtn" disabled>Check In</button>
-                    <button type="submit" class="btn btn-primary mt-4" name="checkoutBtn">Check Out</button>
+                    <?php
+                    $jamMasuk = strtotime($absenToDay->checkin);
+                    $jamSekarang = strtotime(date('H:i:s'));
+                    $selisihJam = $jamSekarang - $jamMasuk / 3600;
+                    ?>
+                    @if ($selisihJam < 8)
+                        {{-- Jika sudah checkin tapi kurang dari 8 jam --}}
+                        <button type="submit" class="btn btn-primary mt-4" name="checkinBtn" disabled>Check In</button>
+                        <button type="submit" class="btn btn-primary mt-4" name="checkoutBtn" disabled>Check Out</button>
+                    @else
+                        {{-- Jika belum Checkout lebih dari 8 jam --}}
+                        <button type="submit" class="btn btn-primary mt-4" name="checkinBtn" disabled>Check In</button>
+                        <button type="submit" class="btn btn-primary mt-4" name="checkoutBtn">Check Out</button>
+                    @endif
                 @else
-
                     {{-- Jika sudah checkOut --}}
                     <button type="submit" class="btn btn-primary mt-4" name="checkinBtn" disabled>Check In</button>
                     <button type="submit" class="btn btn-primary mt-4" name="checkoutBtn" disabled>Check Out</button>
                 @endif
-                
             @else
                 {{-- Jika belum Checkin --}}
                 <button type="submit" class="btn btn-primary mt-4" name="checkinBtn">Check In</button>
