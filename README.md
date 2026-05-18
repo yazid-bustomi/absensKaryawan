@@ -1,76 +1,122 @@
-Aplikasi Absensi Karyawan sederhana
+<div align="center">
+  <h1>🏢 Aplikasi Absensi Karyawan</h1>
+  <p>Sistem Informasi Absensi Karyawan berbasis Web menggunakan <b>Laravel 8</b></p>
 
-user admin  =>  email = admin@gmail.com   pass = 11
+  [![Laravel](https://img.shields.io/badge/Laravel-8.x-FF2D20?style=for-the-badge&logo=laravel&logoColor=white)](https://laravel.com)
+  [![PHP](https://img.shields.io/badge/PHP-%5E7.3%20|%208.0-777BB4?style=for-the-badge&logo=php&logoColor=white)](https://php.net)
+  [![License](https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
+</div>
 
-user 1  =>  email = user1@gmail.com  pass = 11
-user 2  =>  email = user2@gmail.com  pass = 11
+---
 
-<br> <br> <br> <br>
+## 📖 Tentang Project
 
+**Aplikasi Absensi Karyawan** adalah sebuah sistem informasi berbasis web sederhana yang dirancang untuk memudahkan proses pencatatan dan pengelolaan absensi (kehadiran) karyawan. Aplikasi ini membedakan hak akses antara **Admin** dan **Karyawan (User)**, sehingga data kehadiran dapat dikelola secara terpusat, aman, dan efisien.
 
+Project ini sangat cocok digunakan sebagai referensi belajar maupun dikembangkan lebih lanjut untuk kebutuhan instansi atau perusahaan berskala kecil hingga menengah.
 
+## ✨ Fitur Utama
 
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+### 👨‍💼 Halaman Admin
+- **Dashboard Admin**: Ringkasan data absensi.
+- **Manajemen User**: Menambah (`Create`), mengedit (`Update`), dan melihat data karyawan.
+- **Rekap Absensi**: Memantau daftar riwayat kehadiran (absensi) seluruh karyawan.
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+### 👤 Halaman Karyawan (User)
+- **Dashboard User**: Halaman utama karyawan setelah login.
+- **Form Absensi**: Karyawan dapat melakukan absensi / check-in kehadiran.
+- **Riwayat Absen**: Karyawan dapat melihat status absensinya.
 
-## About Laravel
+## 🛠️ Teknologi yang Digunakan
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- **Framework PHP**: [Laravel 8.x](https://laravel.com/)
+- **Frontend**: Blade Templating Engine & UI Toolkit
+- **Database**: MySQL (via Eloquent ORM)
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 🚀 Panduan Instalasi (Local Development)
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Ikuti langkah-langkah di bawah ini untuk menjalankan project di komputer Anda:
 
-## Learning Laravel
+1. **Clone Repository**
+   ```bash
+   git clone https://github.com/username-anda/nama-repo.git
+   cd nama-repo
+   ```
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+2. **Install Dependensi Composer**
+   ```bash
+   composer install
+   ```
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+3. **Install Dependensi NPM**
+   ```bash
+   npm install && npm run dev
+   ```
 
-## Laravel Sponsors
+4. **Konfigurasi Environment**
+   Duplikat file `.env.example` dan ubah namanya menjadi `.env`.
+   ```bash
+   cp .env.example .env
+   ```
+   Buka file `.env` dan atur koneksi database Anda (sesuaikan dengan lokal Anda):
+   ```env
+   DB_CONNECTION=mysql
+   DB_HOST=127.0.0.1
+   DB_PORT=3306
+   DB_DATABASE=db_absensi
+   DB_USERNAME=root
+   DB_PASSWORD=
+   ```
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+5. **Generate Application Key**
+   ```bash
+   php artisan key:generate
+   ```
 
-### Premium Partners
+6. **Migrasi Database & Seeder**
+   Pastikan Anda sudah membuat database kosong di MySQL Anda (misal: `db_absensi`), lalu jalankan perintah ini untuk membuat tabel beserta data dummy-nya:
+   ```bash
+   php artisan migrate --seed
+   ```
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+7. **Jalankan Local Server**
+   ```bash
+   php artisan serve
+   ```
+   Akses aplikasi di browser Anda melalui: `http://localhost:8000`
 
-## Contributing
+## 🔑 Akun Demo (Default Credentials)
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Setelah database berhasil di-seed, Anda dapat mencoba login menggunakan akun default berikut:
 
-## Code of Conduct
+| Role | Email | Password |
+|------|-------|----------|
+| **Admin** | `admin@gmail.com` | `11` |
+| **Karyawan 1**| `user1@gmail.com` | `11` |
+| **Karyawan 2**| `user2@gmail.com` | `11` |
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+> **⚠️ Catatan Keamanan**: Pastikan untuk segera mengganti password default ini apabila aplikasi akan di-deploy ke production atau public server!
 
-## Security Vulnerabilities
+## 📸 Tampilan Aplikasi (Screenshots)
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+*(Silakan tambahkan screenshot / tangkapan layar aplikasi Anda di sini agar terlihat lebih profesional di mata pengunjung)*
 
-## License
+| Dashboard Admin | Halaman Absensi Karyawan |
+|:---:|:---:|
+| <img src="https://via.placeholder.com/600x350?text=Screenshot+Admin+Dashboard" alt="Admin Dashboard" width="100%"> | <img src="https://via.placeholder.com/600x350?text=Screenshot+User+Dashboard" alt="User Dashboard" width="100%"> |
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## 🤝 Kontribusi
+
+Kami sangat menyambut baik segala bentuk kontribusi! Jika Anda menemukan bug atau memiliki ide fitur baru, silakan:
+1. Fork repository ini.
+2. Buat branch fitur baru (`git checkout -b fitur-baru`).
+3. Commit perubahan Anda (`git commit -m 'Menambahkan fitur XYZ'`).
+4. Push ke branch tersebut (`git push origin fitur-baru`).
+5. Buka **Pull Request**.
+
+## 📄 Lisensi
+
+Project ini bersifat _Open-Source_ di bawah lisensi [MIT License](https://opensource.org/licenses/MIT). Anda bebas untuk menggunakan, mengubah, dan mendistribusikannya untuk berbagai keperluan.
+
+---
+**Dibuat dengan ❤️ oleh Yazid Bustomi**
