@@ -97,14 +97,6 @@ Setelah database berhasil di-seed, Anda dapat mencoba login menggunakan akun def
 
 > **⚠️ Catatan Keamanan**: Pastikan untuk segera mengganti password default ini apabila aplikasi akan di-deploy ke production atau public server!
 
-## 📸 Tampilan Aplikasi (Screenshots)
-
-*(Silakan tambahkan screenshot / tangkapan layar aplikasi Anda di sini agar terlihat lebih profesional di mata pengunjung)*
-
-| Dashboard Admin | Halaman Absensi Karyawan |
-|:---:|:---:|
-| <img src="https://via.placeholder.com/600x350?text=Screenshot+Admin+Dashboard" alt="Admin Dashboard" width="100%"> | <img src="https://via.placeholder.com/600x350?text=Screenshot+User+Dashboard" alt="User Dashboard" width="100%"> |
-
 ## 🤝 Kontribusi
 
 Kami sangat menyambut baik segala bentuk kontribusi! Jika Anda menemukan bug atau memiliki ide fitur baru, silakan:
